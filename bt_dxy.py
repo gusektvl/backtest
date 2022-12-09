@@ -7,12 +7,12 @@ import pandas as pd
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import train_test_split
 
-ticker = '^KS11'
+ticker = 'DX'
 today = datetime.today().strftime('%Y-%m-%d')
 start, end = '2022-06-01', '2022-12-09'
 
-DXY = yf.download(tickers=ticker, start=start, end=end, interval='1h',)
-data = DXY.copy()
+DX = yf.download(tickers=ticker, start=start, end=end, interval='1h',)
+data = DX.copy()
 
 def BBANDS(data, n_lookback, n_std):
     """Bollinger bands indicator"""
